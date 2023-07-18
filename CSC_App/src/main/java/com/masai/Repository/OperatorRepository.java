@@ -1,0 +1,9 @@
+package com.masai.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.masai.Entity.*;
+
+public interface OperatorRepository extends JpaRepository<Operator, Integer>{
+
+}
