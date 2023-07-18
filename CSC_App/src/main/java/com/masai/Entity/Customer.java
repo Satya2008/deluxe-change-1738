@@ -1,6 +1,7 @@
 package com.masai.Entity;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -40,7 +41,7 @@ public class Customer {
      
     @JsonIgnore
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Issue> issues;
+    private List<Issue> issues = new ArrayList<>();
 
 	public Customer(String firstName, String lastName, String email, String mobile, String city) {
 		super();
