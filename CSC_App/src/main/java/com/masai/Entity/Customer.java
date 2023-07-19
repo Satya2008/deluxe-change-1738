@@ -23,9 +23,9 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-public class Customer {
-	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Customer extends Login{
+
+    @Column(unique = true)
     private int customerId;
 	@NotNull(message = "name should not be empty!")
     private String firstName;
