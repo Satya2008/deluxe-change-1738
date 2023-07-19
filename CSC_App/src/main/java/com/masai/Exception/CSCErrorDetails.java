@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public class CSCErrorDetails {
-	String Message;
-	String Description;
-	LocalDateTime ldt = LocalDateTime.now();
+    String Message;
+    String Description;
+    LocalDateTime ldt = LocalDateTime.now();
 }
