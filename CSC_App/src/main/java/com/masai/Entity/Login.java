@@ -12,6 +12,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
+
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -20,6 +24,9 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
+
+@Inheritance(strategy = InheritanceType.JOINED)
+
 public class Login {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,13 +34,17 @@ public class Login {
 
 	@Column(unique = true)
 	@NotNull(message = "username should not be empty!")
+
 	private String username;
+
 	
 	@JsonProperty(access = Access.WRITE_ONLY)
 	private String password;
 	private UserType type;  // we can make it enum if required
 	private boolean isActive; // we can make it enum if required
 
+
 	@OneToOne(mappedBy = "login", cascade = CascadeType.ALL)
 	private Operator operator;
+
 }

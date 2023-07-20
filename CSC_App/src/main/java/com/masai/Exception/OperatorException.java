@@ -1,5 +1,6 @@
 package com.masai.Exception;
 
+
 public class OperatorException extends Exception{
 
 	public OperatorException(String message) {
@@ -8,5 +9,6 @@ public class OperatorException extends Exception{
 	}
 	
 	
+
 
 }

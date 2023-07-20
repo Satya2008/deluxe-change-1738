@@ -1,5 +1,6 @@
 package com.masai.Exception;
 
+
 public class SolutionException extends Exception{
 
 	public SolutionException(String message) {
@@ -8,4 +9,5 @@ public class SolutionException extends Exception{
 	}
 
 	
+
 }

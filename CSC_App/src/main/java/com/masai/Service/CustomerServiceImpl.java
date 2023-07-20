@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 
 import com.masai.Entity.Customer;
 import com.masai.Entity.Issue;
+
 import com.masai.Entity.IssueStatus;
+
 import com.masai.Entity.Login;
 import com.masai.Exception.CustomerException;
 import com.masai.Exception.IssueException;
@@ -15,27 +17,29 @@ import com.masai.Repository.CustomerRepository;
 import com.masai.Repository.IssueRepository;
 
 @Service
-public class CustomerServiceImpl implements CustomerService {
+
+public class CustomerServiceImpl implements  CustomerService{
 
 	@Autowired
 	private CustomerRepository cr;
-
+	
 	@Autowired
 	private IssueRepository ir;
-
+	
 	@Override
 	public Customer registerCustomer(Customer customer) throws CustomerException {
 		// TODO Auto-generated method stub
-		if (customer == null)
-			throw new CustomerException("Customer is not Valid");
-
+		if(customer  == null) throw new CustomerException("Customer is not Valid");
+		
 		List<Customer> customerlist = cr.findAll();
-
-		for (Customer c : customerlist) {
-			if (c.getEmail().equals(customer.getEmail())) {
+		
+		for(Customer c:customerlist) {
+			if(c.getEmail().equals(customer.getEmail())) {
 				throw new CustomerException("Customer with given Email Already Exist");
 			}
 		}
+		
+		
 
 		return cr.save(customer);
 	}
@@ -43,12 +47,15 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public Issue viewlssueByld(Integer issueId) throws IssueException {
 		// TODO Auto-generated method stub
+
 		Issue issue = ir.findById(issueId).orElseThrow(() -> new IssueException("Issue Not Found"));
+
 		return issue;
 	}
 
 	@Override
 	public Issue reopenlssue(Integer customerId, String issueId) throws IssueException, CustomerException {
+
 
 		Customer customer = cr.findById(customerId).orElseThrow(() -> new CustomerException("Customer Not Found"));
 
@@ -62,14 +69,18 @@ public class CustomerServiceImpl implements CustomerService {
 
 		issue.setIssueStatus(IssueStatus.PENDING);
 
+
 		return ir.save(issue);
 	}
 
 	@Override
 	public List<Issue> viewAllIssues(int customerId) throws CustomerException, IssueException {
 		// TODO Auto-generated method stub
-		Customer c = cr.findById(customerId).orElseThrow(() -> new CustomerException("Customer Not Found"));
-		if (c.getIssues().size() == 0) {
+
+	
+		Customer c = cr.findById(customerId).orElseThrow(()->new CustomerException("Customer Not Found"));
+		if(c.getIssues().size() == 0) {
+
 			throw new IssueException("No issue Found");
 		}
 		return c.getIssues();

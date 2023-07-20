@@ -1,5 +1,6 @@
 package com.masai.Service;
 
+
 import java.util.List;
 
 import com.masai.Entity.CurrentOperatorSession;
@@ -31,6 +32,7 @@ public interface operatorService {
 	public Customer findCustomerByEmail(String email) throws OperatorException;
 	
 	public boolean lockCustomer(Integer customerId) throws OperatorException;
+
 	
 
 }

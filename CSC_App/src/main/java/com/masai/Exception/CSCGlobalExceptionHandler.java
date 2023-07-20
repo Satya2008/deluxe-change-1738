@@ -1,7 +1,6 @@
 package com.masai.Exception;
 
 
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -39,10 +38,13 @@ public class CSCGlobalExceptionHandler {
 	@ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<CSCErrorDetails> MethodArgExceptionHandler(MethodArgumentNotValidException m){
 		CSCErrorDetails details = new CSCErrorDetails();
+
+
         details.setMessage("Validation Error");
         details.setDescription(m.getBindingResult().getFieldError().getDefaultMessage());
         return new ResponseEntity<>(details, HttpStatus.BAD_REQUEST);
     }
+
 	
 	
 	@ExceptionHandler(CallException.class)
@@ -127,4 +129,8 @@ public class CSCGlobalExceptionHandler {
 		
 	}
 	
+
+
+
+
 }
