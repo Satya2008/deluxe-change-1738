@@ -70,8 +70,8 @@ public class CSCGlobalExceptionHandler {
 	}
 	
 	
-	@ExceptionHandler(DeparmentExxception.class)
-	public ResponseEntity<CSCErrorDetails> DepartmentException(DeparmentExxception e, WebRequest wr){
+	@ExceptionHandler(DepartmentException.class)
+	public ResponseEntity<CSCErrorDetails> DepartmentException(DepartmentException e, WebRequest wr){
 		
 		CSCErrorDetails ed = new CSCErrorDetails();
 		ed.setMessage(e.getMessage());
