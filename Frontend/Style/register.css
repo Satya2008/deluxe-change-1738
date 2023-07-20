@@ -5,7 +5,7 @@ body {
 
 nav {
 	display: flex;
-	background-color: rgb(37, 109, 137);
+	background-color: rgb(39, 126, 161);
 	color: #fff;
 	padding: 10px;
 	height: 38px;
@@ -47,7 +47,7 @@ nav ul li a:hover {
 
 #newPage {
 	text-decoration: none;
-	color: darkcyan;
+	color: rgb(39, 126, 161);
 }
 
 .container {
@@ -87,7 +87,7 @@ select {
 }
 
 button {
-	background-color: #007bff;
+	background-color: rgb(39, 126, 161);
 	color: #fff;
 	border: none;
 	padding: 10px 20px;
@@ -107,9 +107,18 @@ button:hover {
 select,
 option,
 input {
-	border: 1px solid rgb(150, 148, 145);
+	border: 1px solid rgb(39, 126, 161);
 }
 
 input {
 	padding: 10px;
+}
+
+#name {
+	/* border: 1px solid black; */
+	font-size: 25px;
+	margin-left: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
