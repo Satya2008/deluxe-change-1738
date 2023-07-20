@@ -28,7 +28,9 @@ public class Issue {
     private String issueDescription;
 	
 	@NotNull(message = "issueStatus should not be empty!")
-    private String issueStatus;  //make it enum if required
+
+    private IssueStatus issueStatus;  //make it enum if required
+
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id")
@@ -39,7 +41,8 @@ public class Issue {
 
 	public Issue(@NotNull(message = "issueType should not be empty!") String issueType,
 			@NotNull(message = "issueDescription should not be empty!") String issueDescription,
-			@NotNull(message = "issueStatus should not be empty!") String issueStatus, Customer customer,
+			@NotNull(message = "issueStatus should not be empty!") IssueStatus issueStatus, Customer customer,
+
 			Solution solution) {
 		super();
 		this.issueType = issueType;

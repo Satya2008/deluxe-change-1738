@@ -2,8 +2,11 @@ package com.masai.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.masai.Entity.*;
 
-public interface OperatorRepository extends JpaRepository<Operator, Integer>{
+import com.masai.Entity.Operator;
+
+public interface OperatorRepository extends JpaRepository<Operator, Integer> {
+
+	public Operator findByUsername(String userName);
 
 }
