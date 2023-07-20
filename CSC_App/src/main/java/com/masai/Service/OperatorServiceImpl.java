@@ -20,10 +20,12 @@ import com.masai.Repository.CustomerRepository;
 import com.masai.Repository.IssueRepository;
 import com.masai.Repository.OperatorRepository;
 
+import lombok.extern.slf4j.Slf4j;
 import net.bytebuddy.utility.RandomString;
 
 @Service
-public class OperatortServiceImpl implements operatorService {
+@Slf4j
+public class OperatorServiceImpl implements operatorService {
 
 	@Autowired
 	private IssueRepository issueRepository;

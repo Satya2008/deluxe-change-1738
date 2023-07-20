@@ -1,9 +1,9 @@
 package com.masai.Exception;
 
 
-public class DeparmentExxception extends Exception {
+public class DepartmentException extends Exception {
 
-    public DeparmentExxception(String message) {
+    public DepartmentException(String message) {
         super(message);
         // TODO Auto-generated constructor stub
     }

@@ -16,8 +16,10 @@ import com.masai.Exception.IssueException;
 import com.masai.Repository.CustomerRepository;
 import com.masai.Repository.IssueRepository;
 
-@Service
+import lombok.extern.slf4j.Slf4j;
 
+@Service
+@Slf4j
 public class CustomerServiceImpl implements  CustomerService{
 
 	@Autowired
