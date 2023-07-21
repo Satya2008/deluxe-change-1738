@@ -31,14 +31,14 @@ public class Controller {
 	@DeleteMapping("/operators/{id}")
 	public ResponseEntity<Operator> removeOperator(@PathVariable int id) throws OperatorException, Exception {
 	    Operator removedOperator = adminService.removeOperatorById(id);
-	    return new ResponseEntity<>(removedOperator, HttpStatus.OK);
+	    return new ResponseEntity<Operator>(removedOperator, HttpStatus.OK);
 	}
 
 	// Modify Operator
 	@PutMapping("/operators/{id}")
 	public ResponseEntity<Operator> modifyOperator(@PathVariable int id, @RequestBody Operator operator) throws OperatorException, LoginException {
 	    Operator modifiedOperator = adminService.modifyOperator(id);
-	    return new ResponseEntity<>(modifiedOperator, HttpStatus.OK);
+	    return new ResponseEntity<Operator>(modifiedOperator, HttpStatus.OK);
 	}
 
 	// Find Operator by ID

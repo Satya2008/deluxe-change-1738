@@ -5,6 +5,7 @@ import java.util.List;
 import com.masai.Entity.*;
 import com.masai.Exception.CustomerException;
 import com.masai.Exception.IssueException;
+import com.masai.Exception.OperatorException;
 
 public interface CustomerService {
 	
@@ -21,5 +22,9 @@ public interface CustomerService {
 	public String forgotPassword(Integer CustomerID);
 	
 	public Customer emailPassword(Integer CustomerID);
+
+	Issue addCustomerIssue(Issue issue, int CustomerId) throws OperatorException, CustomerException;
+	 
+	
 
 }
