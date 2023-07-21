@@ -1,34 +1,37 @@
-function registerCustomer() {
-	const firstName = document.getElementById('firstName').value
-	const lastName = document.getElementById('lastName').value
-	const email = document.getElementById('email').value
-	const mobile = document.getElementById('mobile').value
-	const city = document.getElementById('city').value
+const handleSubmit = (event) => {
+	event.preventDefault()
 
-	const customerData = {
-		firstName: firstName,
-		lastName: lastName,
-		email: email,
-		mobile: mobile,
-		city: city,
+	const registrationForm = document.getElementById('registrationForm')
+
+	const firstName = registrationForm.elements.firstName.value
+	const lastName = registrationForm.elements.lastName.value
+	const email = registrationForm.elements.email.value
+	const mobile = registrationForm.elements.mobile.value
+	const city = registrationForm.elements.city.value
+
+	const data = {
+		firstName,
+		lastName,
+		email,
+		mobile,
+		city,
 	}
 
-	// Replace 'your_api_endpoint' with the actual API endpoint to register the customer
-	fetch('your_api_endpoint', {
+	fetch('https://example.com/api/register', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
 		},
-		body: JSON.stringify(customerData),
+		body: JSON.stringify(data),
 	})
 		.then((response) => response.json())
-		.then((data) => {
-			// Handle the response from the server if needed
-			console.log(data)
-			alert('Customer registered successfully!')
+		.then((responseData) => {
+			console.log('Response from API:', responseData)
 		})
 		.catch((error) => {
 			console.error('Error:', error)
-			alert('Failed to register customer!')
 		})
 }
+
+const submitButton = document.querySelector('button[type="submit"]')
+submitButton.addEventListener('click', handleSubmit)

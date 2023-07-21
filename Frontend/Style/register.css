@@ -1,6 +1,14 @@
 body {
 	margin: 0;
 	padding: 0;
+	/* background-image: url('/rBg.jpg'); */
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	font-family: 'Exo 2', sans-serif;
 }
 
 nav {
@@ -12,7 +20,11 @@ nav {
 	align-items: center;
 	justify-content: space-between;
 	padding-left: 30px;
-	padding-right: 50px;
+	padding-right: 25px;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	width: 97%;
 }
 
 nav ul {
@@ -41,8 +53,8 @@ nav ul li a:hover {
 
 #logo {
 	margin-top: 5px;
-	width: 140px;
-	height: 140px;
+	width: 70px;
+	height: 70px;
 }
 
 #newPage {
@@ -56,9 +68,9 @@ nav ul li a:hover {
 	height: 400px;
 	max-width: 400px;
 	padding: 20px;
-	background-color: #f5f5f5;
+	/* background-color: #f5f5f5; */
 	border-radius: 10px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	/* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
 }
 
 h1 {
@@ -78,7 +90,7 @@ label {
 
 input,
 select {
-	background-color: #f0f0f0;
+	/* background-color: #f0f0f0; */
 	margin-bottom: 10px;
 	padding: 8px;
 	border: 1px solid #ccc;
@@ -117,7 +129,7 @@ input {
 #name {
 	/* border: 1px solid black; */
 	font-size: 25px;
-	margin-left: 200px;
+	margin-left: 290px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
