@@ -27,9 +27,7 @@ This project is an online customer service center built with Spring Boot. It pro
 - Maven
 - MySQL Server
 
-# ER Diagram
 
-<img src="" >
 
 
 <h1 align = "center"> Some functionalities images </h1>
